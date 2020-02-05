@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 /**
-*main - Using perror to display a statement
+*main - Using write to display a statement
 *Return: 1
 */
 int main(void)
