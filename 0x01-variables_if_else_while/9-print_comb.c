@@ -13,6 +13,7 @@ if (i != 9)
 {
 putchar (i + '0');
 putchar (',');
+putchar (' ');
 i++;
 }
 else
@@ -21,6 +22,5 @@ putchar (i + '0');
 i++;
 }
 }
-putchar ('\n');
 return (0);
 }
