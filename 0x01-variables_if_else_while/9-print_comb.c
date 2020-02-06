@@ -6,11 +6,20 @@
 */
 int main(void)
 {
-int i;
-for (i = 0; i < 10; i++)
+int i = 0;
+while (i < 10)
+{
+if (i != 9)
 {
 putchar (i + '0');
-putchar(',');
+putchar (',');
+i++;
+}
+else
+{
+putchar (i + '0');
+i++;
+}
 }
 putchar ('\n');
 return (0);
