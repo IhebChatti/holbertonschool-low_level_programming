@@ -1,18 +1,19 @@
 #include "holberton.h"
-#define putchar(c)
 /**
 *main - Entry point
 *Return: 0
 */
 int main(void)
 {
-	char *c = "Holberton";
-
-	while (*c)
-	{
-		putchar (*c);
-		c++;
-	}
-	putchar ('\n');
+	_putchar ('H');
+	_putchar ('o');
+	_putchar ('l');
+	_putchar ('b');
+	_putchar ('e');
+	_putchar ('r');
+	_putchar ('t');
+	_putchar ('o');
+	_putchar ('n');
+	_putchar ('\n');
 	return (0);
 }
