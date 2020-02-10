@@ -3,9 +3,9 @@
 *print_alphabet - print the alphabet in lowercase
 *Return: 0
 */
-int print_alphabet(char c)
+void print_alphabet(void)
 {
-	c ='a';
+	char c ='a';
 	while (c <= 'z')
 	{
 		putchar(c);
