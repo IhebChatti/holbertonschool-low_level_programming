@@ -14,10 +14,10 @@ int main(void)
 		x = x + y;
 		y = x - y;
 		printf("%ld", x);
-		if ( i != 50)
+		if (i != 50)
 		{
 			printf(", ");
-		}	
+		}
 	}
 	printf("\n");
 	return (0);
