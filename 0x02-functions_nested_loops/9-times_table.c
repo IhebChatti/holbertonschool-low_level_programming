@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
 *times_table - displays the times table from 0 to 9
