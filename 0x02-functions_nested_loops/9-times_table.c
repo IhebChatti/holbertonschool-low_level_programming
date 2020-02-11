@@ -1,9 +1,10 @@
+#include <stdio.h>
 #include "holberton.h"
 /**
 *times_table - displays the times table from 0 to 9
 *Return: 0
 */
-void times_table(void)
+int main(void)
 {
 	int i, j;
 	int mul;
