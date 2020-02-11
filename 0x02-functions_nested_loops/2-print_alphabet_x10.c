@@ -5,7 +5,7 @@
 */
 void print_alphabet(void)
 {
-	int i = 0, j;
+	int i, j;
 
 	while (i < 10)
 	{
