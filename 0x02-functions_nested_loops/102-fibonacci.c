@@ -13,7 +13,13 @@ int main(void)
 	{
 		x = x + y;
 		y = x - y;
-		printf("%ld, ", x);
+		printf("%ld", x);
+		if ( i != 50)
+		{
+			printf(", ");
+		}	
 	}
+	printf("\n");
 	return (0);
+
 }
