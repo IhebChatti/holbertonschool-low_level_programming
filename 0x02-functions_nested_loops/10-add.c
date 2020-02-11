@@ -1,12 +1,13 @@
 #include "holberton.h"
 /**
 *add - addition
-*@int: the parameter taken by the function
+*@x: first number to add
+*@y: second number to add
 *Return: S is the sum of two numbers
 */
-int add(int, int)
+int add(int x, int y)
 {
-	int x, y, S;
+	int S;
 
 	S = x + y;
 	return (S);
