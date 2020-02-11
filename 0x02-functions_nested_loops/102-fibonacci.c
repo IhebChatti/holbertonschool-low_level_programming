@@ -6,7 +6,7 @@
 int main(void)
 {
 	int i;
-	long x = 1, y = 2;
+	long int x = 1, y = 2;
 
 	printf("%ld, %ld, ", x, y);
 	for (i = x + y; i <= 50; i++)
