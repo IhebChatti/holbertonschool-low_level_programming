@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
 *jack_bauer - minutes/hours counter Jack Bauer style
-*Return: 0
+*Return: void
 */
 void jack_bauer(void)
 {
