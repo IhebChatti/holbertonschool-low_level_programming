@@ -13,13 +13,14 @@ int main(void)
 		for (j = 0; j <= 9; j++)
 		{
 		mul	= i * j;
-		putchar (mul + '0');
+		_putchar (mul + '0');
 		if (i <= 8 && j <= 8)
 		{
-			putchar (',');
-			putchar (' ');
+			_putchar (',');
+			_putchar (' ');
 		}
 		}
-	putchar ('\n');
+	_putchar ('\n');
 	}
+	return (0);
 }
