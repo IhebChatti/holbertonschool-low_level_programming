@@ -5,14 +5,15 @@
 */
 int main(void)
 {
-	int i, next, x = 0, y = 1;
+	int i;
+	long x = 1, y = 2;
 
-	for (i = 0; i < 50; i++)
+	printf("%ld, %ld, ", x, y);
+	for (i = x + y; i <= 50; i++)
 	{
-		printf("%d, ", x);
-		next = x + y;
-		x = y;
-		y = next;
+		x = x + y;
+		y = x - y;
+		printf("%ld, ", x);
 	}
 	return (0);
 }
