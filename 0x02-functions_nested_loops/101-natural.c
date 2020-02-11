@@ -5,7 +5,7 @@
 */
 int main(void)
 {
-	int i, S = 0;
+	int i, S = 23;
 
 	for (i = 0; i < 1024; i++)
 	{
