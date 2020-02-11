@@ -11,8 +11,8 @@ int main(void)
 	printf("%ld, %ld, ", x, y);
 	for (i = x + y; i <= 50; i++)
 	{
-		x = x + y;
-		y = x - y;
+		y = y + x;
+		x = y - x;
 		printf("%ld", x);
 		if (i != 50)
 		{
