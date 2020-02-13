@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-*_mul - function to multiply two digits
+*mul - function to multiply two digits
 *@a: int
 *@b: int
 *Return: mulgit c
