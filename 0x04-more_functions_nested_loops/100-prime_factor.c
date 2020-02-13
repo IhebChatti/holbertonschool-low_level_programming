@@ -5,9 +5,9 @@
 */
 int main(void)
 {
-long int n;
-n = 612852475143;
-long int div = 2, ans = 0, maxFact;
+long int n = 612852475143;
+
+long int div = 2, maxFact;
 
 while (n != 0)
 {
@@ -20,7 +20,6 @@ n = n / div;
 if (n == 1)
 {
 printf("%ld\n", maxFact);
-ans = 1;
 break;
 }
 }
