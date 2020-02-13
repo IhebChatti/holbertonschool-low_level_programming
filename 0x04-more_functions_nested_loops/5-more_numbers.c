@@ -1,5 +1,5 @@
 #include "holberton.h"
-/*
+/**
 *more_numbers - print from 0 to 14
 *Return: Void
 */
