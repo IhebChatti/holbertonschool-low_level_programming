@@ -6,7 +6,7 @@
 */
 void print_rev(char *s)
 {
-	int i = 0, j;
+	int i, j;
 
 	for (i = 0; s[i]; i++)
 		j = i;
