@@ -1,4 +1,4 @@
-#include "holbertob.h"
+#include "holberton.h"
 /**
 *reset_to_98 - reset the variable to 98
 *@n: a pointer of type int
