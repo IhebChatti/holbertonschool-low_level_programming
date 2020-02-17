@@ -1,6 +1,6 @@
 #include "holbertob.h"
 /**
-*rest_to_98 - reset the variable to 98
+*reset_to_98 - reset the variable to 98
 *@n: a pointer of type int
 *Return: void
 */
