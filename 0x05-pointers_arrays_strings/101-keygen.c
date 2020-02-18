@@ -1,7 +1,6 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 /**
 *main - a program to generates a password
 *Return: 0
