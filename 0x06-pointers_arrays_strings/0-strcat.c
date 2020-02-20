@@ -13,10 +13,9 @@ int i = 0, length = 0;
 		length++;
 	while (src[i] != '\0')
 	{
-		*(dest + length) = *(src + i);
+		dest[length] = src[i];
 		i++;
 		length++;
 	}
-	dest[length + i] = '\0';
 	return (dest);
 }
