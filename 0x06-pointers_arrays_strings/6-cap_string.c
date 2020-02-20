@@ -16,7 +16,12 @@ char *cap_string(char *str)
 				str[0] = str[0] - 32;
 			continue;
 		}
-		if (str[i] == ' ' || str[i] == '.'  || str[i] == '\t' || str[i] == '\n' || str[i] == ';' || str[i] == '(' || str[i] == ',' || str[i] == ')' || str[i] == '{' || str[i] == '}' || str[i] == '?' || str[i] == '"')
+		if (str[i] == ' ' || str[i] == '.'
+			|| str[i] == '\t' || str[i] == '\n'
+			|| str[i] == ';' || str[i] == '('
+			|| str[i] == ',' || str[i] == ')'
+			|| str[i] == '{' || str[i] == '}'
+			|| str[i] == '?' || str[i] == '"')
 		{
 			i++;
 			if (str[i] >= 'a' && str[i] <= 'z')
