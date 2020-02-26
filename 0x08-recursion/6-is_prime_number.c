@@ -9,7 +9,7 @@
 int check_prime(int n, int i);
 int is_prime_number(int n)
 {
-	if (check_prime(n) == 1)
+	if (check_prime(n, 1) == 1)
 		return (1);
 	else
 		return (0);
@@ -24,7 +24,6 @@ int is_prime_number(int n)
 int check_prime(int n, int i)
 {
 	i = 2;
-
 	if (n <= 2)
 		return ((n == 2) ? 1 : 0);
 	if (n % i == 0)
