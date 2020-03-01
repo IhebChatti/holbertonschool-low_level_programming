@@ -8,7 +8,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int money, i, res, x;
+	int money, i, res, mod;
 	int coins[5] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -27,9 +27,9 @@ int main(int argc, char *argv[])
 		for (i = 0; i < 5; i++)
 			if (money >= coins[i])
 			{
-				x = money % coins[i];
+				mod = money % coins[i];
 				res = (money / coins[i]) + 1;
-				money = x;
+				money = mod;
 			}
 	}
 	printf("%d\n", res);
