@@ -4,7 +4,7 @@
 /**
 *strtow - function that split strings into words
 *@str: pointer type char
-*return: pointer type char
+*Return: pointer type char
 */
 char **strtow(char *str)
 {
