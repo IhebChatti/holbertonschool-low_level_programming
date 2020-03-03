@@ -22,12 +22,12 @@ char *str_concat(char *s1, char *s2)
 		l1++;
 		i++;
 	}
-	while (s2[j] != '\0')
+	while (s2[i] != '\0')
 	{
 		l2++;
 		i++;
 	}
-	str = malloc(sizeof(char) * (l1 + l2 + 1));
+	str = malloc(l1 + l2 + 1);
 	if (str == NULL)
 		return (NULL);
 	while (i < l1)
