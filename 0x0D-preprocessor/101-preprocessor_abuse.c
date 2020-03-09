@@ -1,4 +1,4 @@
-#warning "Hello, Holberton"
+#pragma message("Hello, Holberton")
 void main(void)
 {
 }
