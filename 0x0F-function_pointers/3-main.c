@@ -1,4 +1,4 @@
-#include "cal.h"
+#include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
 /**
@@ -11,6 +11,7 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2, res;
+
 	if (argc != 4)
 	{
 		printf("Error\n");
