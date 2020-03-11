@@ -21,13 +21,9 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 5)
 	{
-		if (*s != *legitOPs[i].op)
-		{
-			printf("Error\n");
-			exit(99);
-		}
-		return (legitOPs[i].f);
+		if (*s = *legitOPs[i].op)
+			return (legitOPs[i].f);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
