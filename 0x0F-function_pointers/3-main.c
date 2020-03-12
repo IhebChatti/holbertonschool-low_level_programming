@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
 *main - Entry point
 *@argc: int number of arguments passed
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	if (get_op_func(argv[2]) == NULL)
+	if (get_op_func(argv[2]) == NULL || strlen(argv[2]) != 1)
 	{
 		printf("Error\n");
 		exit(99);
