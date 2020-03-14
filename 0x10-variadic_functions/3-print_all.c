@@ -31,7 +31,8 @@ void print_all(const char * const format, ...)
 					break;
 				case 's':
 					str = va_arg(args, char *);
-					if (str[i] != '\0')
+					if (str == NULL)
+						printf("(nil)");
 					printf("%s", str);
 					break;
 				default:
@@ -39,7 +40,7 @@ void print_all(const char * const format, ...)
 					break;
 			}
 			i++;
-			if (def == 1 && format[i] != '\0')
+			if (def == 1 && format[i])
 				printf(", ");
 		}
 		va_end(args);
