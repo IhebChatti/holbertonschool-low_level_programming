@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-#define SEP printf(", ")
 /**
 *print_all - function that prints anythings
 *@format: const
@@ -41,10 +40,9 @@ void print_all(const char * const format, ...)
 			}
 			i++;
 			if (def == 1 && format[i] != '\0')
-				SEP;
+				printf(", ");
 		}
 		va_end(args);
 	}
 	printf("\n");
-#undef SEP
 }
