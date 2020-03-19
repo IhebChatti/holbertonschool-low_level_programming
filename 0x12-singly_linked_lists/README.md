@@ -23,3 +23,9 @@ General
 
     When and why using linked lists vs arrays
     How to build and use linked lists
+
+0- A function that prints a linked list
+1- A function that counts the lenght of a node
+2- A function that adds a node at the head of a linked list
+3- A function that adds a node at the end of a linked list
+4- A function that free a list_t
