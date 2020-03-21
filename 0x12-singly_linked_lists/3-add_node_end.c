@@ -1,6 +1,22 @@
 #include "lists.h"
 
 /**
+ *_strlen - function that counts the lenght of a string
+ *@str: string to be counted
+ *
+ *Return: count
+ */
+
+int _strlen(const char *str)
+{
+	int i;
+
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+/**
  *add_node_end - create a node at the end of linked list
  *@head: head node of the linked list
  *@str: string to be added at tail
@@ -18,7 +34,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	temp = *head;
 	new->str = strdup(str);
-	new->len = strlen(str);
+	new->len = _strlen(str);
 	new->next = NULL;
 	if (*head == NULL)
 	{
