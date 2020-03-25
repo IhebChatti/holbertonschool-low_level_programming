@@ -13,8 +13,8 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *temp, *clone;
 
 	clone = head;
-	if (clone == NULL)
-		return (0);
+	if (head == NULL)
+		exit(98);
 	while (clone != NULL)
 	{
 		printf("[%p] %d\n", (void *)clone, clone->n);
