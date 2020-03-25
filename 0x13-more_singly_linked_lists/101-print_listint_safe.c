@@ -18,12 +18,12 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)clone, clone->n);
 		temp = clone;
 		clone = clone->next;
+		i++;
 		if (temp <= clone)
 		{
 			printf("-> [%p] %d\n", (void *)clone, clone->n);
 			break;
 		}
-		i++;
 	}
 return (i);
 }
