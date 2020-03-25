@@ -10,17 +10,19 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i = 0;
-	const listint_t *temp;
+	const listint_t *temp, *clone;
 
-	
-	while (head != NULL)
+	clone = head;
+	if (clone == NULL)
+		return (0);
+	while (clone != NULL)
 	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		temp = head;
-		head = head->next;
-		if (temp <= head)
+		printf("[%p] %d\n", (void *)clone, clone->n);
+		temp = clone;
+		clone = clone->next;
+		if (temp <= clone)
 		{
-			printf("-> [%p] %d\n", (void *)head, head->n);
+			printf("-> [%p] %d\n", (void *)clone, clone->n);
 			break;
 		}
 		i++;
