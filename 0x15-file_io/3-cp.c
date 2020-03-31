@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-#define BUFFERSIZE 1024
+#define BUFFER_SIZE 1024
 
 /**
  * main - copy the content from a file to another
@@ -13,7 +13,7 @@
 int main(int argc, char **argv)
 {
 	int file_from, file_to, fr, fw;
-	char buff[BUFFERSIZE];
+	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"),
@@ -26,17 +26,20 @@ int main(int argc, char **argv)
 		exit(99);
 	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	fr = read(file_from, buff, BUFFERSIZE);
+	fr = read(file_from, buffer, BUFFER_SIZE);
 	if (fr  == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
 		exit(98);
 	while (fr != 0)
 	{
-		fw = write(file_to, buff, fr);
-		if (fw == -1)
+		fw = write(file_to, buffer, fr);
+		if (fw != fr | fw == -1)
 			dprintf(STDERR_FILENO, " Error: Can't write to %s\n", argv[2]),
 			exit(99);
-		fr = read(file_from, buff, BUFFERSIZE);
+		fr = read(file_from, buffer, BUFFER_SIZE);
+		if (fr  == -1)
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
+			exit(98);
 	}
 	fw = close(file_from);
 	if (fw < 0)
