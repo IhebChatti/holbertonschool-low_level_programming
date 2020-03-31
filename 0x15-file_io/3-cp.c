@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv)
 {
-	int file_from, file_to, value;
+	int file_from, file_to, readvalue, ret;
 	char buffer[BUFFER_SIZE];
 
 	if (argc != 3)
@@ -25,16 +25,21 @@ int main(int argc, char **argv)
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]),
 		exit(99);
-	while ((value = read(file_from, buffer, BUFFER_SIZE)) > 0)
-	{
-		value = write(file_to, buffer, value);
-		if (value == -1)
-			dprintf(STDERR_FILENO, " Error: Can't write to %s\n", argv[2]),
-			exit(99);
-	}
-	if (value  == -1)
+	readvalue = read(file_from, buffer, BUFFER_SIZE);
+	if (readvalue == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
 		exit(98);
+	while (readvalue != 0)
+	{
+		ret = write(file_to, buffer, readvalue);
+		if (ret == -1)
+			dprintf(STDERR_FILENO, " Error: Can't write to %s\n", argv[2]),
+			exit(99);
+		readvalue = read(file_from, buffer, BUFFER_SIZE);
+		if (readvalue  == -1)
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
+			exit(98);
+	}
 	file_from = close(file_from);
 	if (file_from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from),
