@@ -26,27 +26,22 @@ int main(int argc, char **argv)
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]),
 		exit(99);
-	fr = read(file_from, buffer, BUFFER_SIZE);
-	if (fr  == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
-		exit(98);
-	while (fr != 0)
+	while ((fr = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		fw = write(file_to, buffer, fr);
 		if (fw == -1)
 			dprintf(STDERR_FILENO, " Error: Can't write to %s\n", argv[2]),
 			exit(99);
-		fr = read(file_from, buffer, BUFFER_SIZE);
-		if (fr  == -1)
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
-			exit(98);
 	}
-	fw = close(file_from);
-	if (fw == -1)
+	if (fr  == -1)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
+		exit(98);
+	file_from = close(file_from);
+	if (file_from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from),
 		exit(100);
-	fw = close(file_to);
-	if (fw == -1)
+	file_to = close(file_to);
+	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to),
 		exit(100);
 	return (0);
