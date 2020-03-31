@@ -12,7 +12,7 @@
 int main(int argc, char **argv)
 {
 	int file_from, file_to, read_value, write_value;
-	char buffer[BUFFER_SIZE];
+	char *buffer[BUFFER_SIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"),
