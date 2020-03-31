@@ -18,14 +18,14 @@ int main(int argc, char **argv)
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"),
 		exit(97);
-	if (argv[1] == NULL)
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
 		exit(98);
-	if (argv[2] == NULL)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]),
-		exit(99);
-	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (file_to == -1)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]),
+		exit(99);
 	fr = read(file_from, buffer, BUFFER_SIZE);
 	if (fr  == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	while (fr != 0)
 	{
 		fw = write(file_to, buffer, fr);
-		if ((fw != fr) | (fw == -1))
+		if (fw == -1)
 			dprintf(STDERR_FILENO, " Error: Can't write to %s\n", argv[2]),
 			exit(99);
 		fr = read(file_from, buffer, BUFFER_SIZE);
@@ -42,11 +42,11 @@ int main(int argc, char **argv)
 			exit(98);
 	}
 	fw = close(file_from);
-	if (fw < 0)
+	if (fw == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from),
 		exit(100);
 	fw = close(file_to);
-	if (fw < 0)
+	if (fw == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to),
 		exit(100);
 	return (0);
