@@ -26,10 +26,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fr < 0)
 		return (0);
 	fw = write(1, temp, fr);
-	if (fw != fr)
-	{
+	if (fw != fr || fw < 0)
 		return (0);
-	}
 	close(fd);
 	free(temp);
 	return (fw);
