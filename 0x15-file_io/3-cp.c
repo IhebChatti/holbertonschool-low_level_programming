@@ -29,16 +29,12 @@ int main(int argc, char **argv)
 	if (read_value == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
 		exit(98);
-	while (read_value != 0)
+	while ((read_value = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		write_value = write(file_to, buffer, read_value);
 		if (write_value == -1)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]),
 			exit(99);
-		read_value = read(file_from, buffer, BUFFER_SIZE);
-		if (read_value  == -1)
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
-			exit(98);
 	}
 	file_from = close(file_from);
 	if (file_from == -1)
