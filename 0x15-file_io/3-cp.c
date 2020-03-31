@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 	int file_from, file_to, readvalue, ret;
 	char buffer[BUFFER_SIZE];
 
+	file_from = file_to = readvalue = ret = 1;
 	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"),
 		exit(97);
