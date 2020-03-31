@@ -3,7 +3,7 @@
 /**
  * read_textfile - function to read a text file
  * @filename: the file to read
- * @letters: nbytes
+ * @letters: number of letters it should read and print
  * Return: Number of letters on success, -1 on failure
  */
 
@@ -22,9 +22,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	fr = read(fd, temp, letters);
 	fw = write(1, temp, fr);
-	if (fw == -1 || fd == -1)
+	if (fr == -1 || fd == -1 || fr != fw)
 		return (0);
 	close(fd);
 	free(temp);
-	return (fr);
+	return (fw);
 }
