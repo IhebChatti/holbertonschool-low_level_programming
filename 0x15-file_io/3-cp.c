@@ -7,7 +7,7 @@
  * @argc: number of arguments given
  * @argv: arguments given
  *
- * Return: EXIT_SUCCESS on success, Error on failure
+ * Return: 0 on success, Error on failure
  */
 
 int main(int argc, char **argv)
@@ -49,5 +49,5 @@ int main(int argc, char **argv)
 	fw = close(file_to);
 	if (fw < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
-	return (EXIT_SUCCESS);
+	return (0);
 }
