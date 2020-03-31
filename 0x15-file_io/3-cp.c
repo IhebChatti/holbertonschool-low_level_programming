@@ -25,12 +25,14 @@ int main(int argc, char **argv)
 	if (file_to == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]),
 		exit(99);
-	while ((value = read(file_from, buffer, BUFFER_SIZE)) > 0)
+	value = read(file_from, buffer, BUFFER_SIZE);
+	while (value > 0)
 	{
 		value = write(file_to, buffer, value);
 		if (value == -1)
 			dprintf(STDERR_FILENO, " Error: Can't write to %s\n", argv[2]),
 			exit(99);
+		value = read(file_from, buffer, BUFFER_SIZE);
 	}
 	if (value  == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
