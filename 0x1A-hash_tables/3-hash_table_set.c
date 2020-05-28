@@ -1,11 +1,12 @@
 #include "hash_tables.h"
 
 /**
- * 
- * 
- * 
- * 
- * 
+ * hash_table_set - function to set by value key in hash
+ * @ht: hashtable to set in
+ * @key: key
+ * @value: value
+ *
+ * Return: 1 on success, 0 on failure
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
