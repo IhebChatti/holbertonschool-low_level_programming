@@ -23,13 +23,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(ht->array[idx]->key, key) == 0)
 		{
+			free(ht->array[idx]->value);
 			ht->array[idx]->value = strdup(value);
+			if (!ht->array[idx]->value)
+				return(0);
+			free(new);
 			return (1);
 		}
 		idx++;
 	}
 	new->key = strdup(key);
+	if (!new->key)
+		return (0);
 	new->value = strdup(value);
+	if (!new->value)
+		return (0);
 	new->next = ht->array[idx];
 	ht->array[idx] = new;
 	return (1);
