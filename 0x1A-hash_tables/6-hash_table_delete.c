@@ -1,11 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * 
- * 
- * 
- * 
- * 
+ * hash_table_delete - functon to delete hashtable
+ * @ht: hashtable to be deleted
+ *
+ * Return: Void
  */
 void hash_table_delete(hash_table_t *ht)
 {
