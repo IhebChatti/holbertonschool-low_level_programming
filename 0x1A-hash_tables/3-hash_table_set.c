@@ -20,8 +20,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	temp = ht->array[idx];
 	if (temp)
 	{
-		while (temp && strcmp(temp->key, key) != 0)
-			temp = temp->next;
 		if (temp && strcmp(temp->key, key) == 0)
 		{
 			free(temp->value);
@@ -30,6 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				return (0);
 			return (1);
 		}
+		temp = temp->next;
 	}
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
