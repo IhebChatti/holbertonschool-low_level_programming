@@ -11,4 +11,4 @@ oclean:
 fclean:
 	rm -f *~ holberton
 	rm -f main.o holberton.o
-re: clean all
+re: oclean all
